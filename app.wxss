@@ -1,0 +1,22 @@
+/**app.wxss**/
+@import 'dist/wxbootstrap.wxss';
+page{
+  position: absolute;
+  height:100%;
+  background:#FAFAFA;
+}
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-between;*/
+  padding: 10rpx 0;
+  /*box-sizing: border-box;*/
+}
+.divide{
+  width:80%;
+  height:5rpx;
+  background:#E0E0E0;
+  margin:23rpx auto;
+}
