@@ -16,3 +16,14 @@
   margin-left: auto;
   margin-right: 0;
 }
+.reset{
+  padding:10rpx;
+  border-radius: 50%;
+  background: #FFF;
+  width:38rpx;
+  height:38rpx;
+
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+}
