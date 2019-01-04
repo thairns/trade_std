@@ -26,4 +26,10 @@
   position: absolute;
   bottom: 32rpx;
   right: 32rpx;
+  z-index: 10;
+}
+.reset_ico{
+  width: 38rpx;
+  height:38rpx;
+  z-index: 12;
 }

@@ -1,20 +1,20 @@
 //home.js
 //获取应用实例
 const app = getApp();
-//var amapFile = require('../../lib/amap-wx.js');
+let amap = require("../../lib/amap");
 
 Page({
     data: {
         longi:'113.324520',
         lati:'23.099994',
-        coverImage:'/resources/aim.svg',
+      coverImage:'/resources/target_blue.png',
         markers: [{
-          iconPath: '/resources/target_blue.svg',
-          id: 0,
+          id: 1,
+          iconPath: '/resources/target_blue.png',
           latitude: 23.099994,
           longitude: 113.324520,
-          width: 25,
-          height: 25
+          width: '56rpx',
+          height: '56rpx'
         }],
         wxmap:{}
     },
@@ -24,15 +24,9 @@ Page({
     onLoad: function () {
         const _this = this;
         _this.initialize();
-        // var key = "4f2592133b9b0f2f6a19a6d7cdd457fe";
-        // var map = new amapFile.AMapWX({key:'高德Key'});
+
         app.globalData.wxmap = wx.createMapContext("wxmap");
         _this.wxmap = app.globalData.wxmap;
-        _this.wxmap.getCenterLocation({
-            success:(res)=>{
-                console.log(res);
-            }
-        });
 
     },
     getUserInfo: function(e) {
@@ -47,11 +41,13 @@ Page({
         }
     },
     markertap(e) {
-        console.log(e);
+  
     },
     resetCen:function(){
         this.wxmap.moveToLocation();
-        // this.initialize();
+        amap.getPoiAround({querykeywords:'美食'}).then(d=>{
+            console.log(d);
+        })
     },
     initialize:function() {
         wx.getLocation({
