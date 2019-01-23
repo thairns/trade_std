@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:218rpx;
+}
+.userinfo button{
+  line-height: 218rpx;
 }
 .userinfo-avatar {
   width: 128rpx;

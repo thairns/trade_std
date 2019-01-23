@@ -7,7 +7,7 @@ Page({
     data: {
         longi:'113.324520',
         lati:'23.099994',
-      coverImage:'/resources/target_blue.png',
+        coverImage:'/resources/aim2.png',
         markers: [{
           id: 1,
           iconPath: '/resources/target_blue.png',
@@ -16,17 +16,13 @@ Page({
           width: '56rpx',
           height: '56rpx'
         }],
-        wxmap:{}
     },
     //事件处理函数
     bindViewTap: function() {
     },
     onLoad: function () {
-        const _this = this;
-        _this.initialize();
-
-        app.globalData.wxmap = wx.createMapContext("wxmap");
-        _this.wxmap = app.globalData.wxmap;
+        this.initialize();
+        this.wxmap = wx.createMapContext("wxmap");
 
     },
     getUserInfo: function(e) {
@@ -45,9 +41,6 @@ Page({
     },
     resetCen:function(){
         this.wxmap.moveToLocation();
-        amap.getPoiAround({querykeywords:'美食'}).then(d=>{
-            console.log(d);
-        })
     },
     initialize:function() {
         wx.getLocation({

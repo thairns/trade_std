@@ -20,3 +20,10 @@ page{
   background:#E0E0E0;
   margin:23rpx auto;
 }
+input{
+  margin:auto 0;
+  padding:12rpx;
+  border-radius:10rpx;
+  background-color:#FFF;
+}
+

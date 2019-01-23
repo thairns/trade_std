@@ -33,8 +33,49 @@ App({
       }
     });
   },
+
+    upload:function(id,images,index=0){
+      let _this = this;
+      return new Promise(function(resolve, reject){
+              function uploadFiles(id,images,index) {
+                  if (images.length <= index) {
+                      resolve("success");
+                      return;
+                  }
+                  wx.showLoading({
+                      title: "正在上传第" + (index + 1) + "张图片",
+                      mask: true,
+                      success: res => {
+                          wx.uploadFile({
+                              url: _this.globalData.domain + "/index/goods/uploadFile",
+                              filePath: images[index++]['path'],
+                              name: 'file',
+                              header: {
+                                  "Content-Type": "multipart/form-data"
+                              },
+                              formData:{id},
+                              success: res => {
+                                  wx.hideLoading();
+                                  console.log(res);
+                                  res = JSON.parse(res.data);
+                                  if (res.status == 1) {
+                                      console.log(res.message);
+                                      uploadFiles(id, images, index);
+                                  } else {
+                                      console.error(res);
+                                  }
+                              }
+                          });
+                      }
+                  });
+              }
+              uploadFiles(id,images,index);
+          }
+      );
+    },
   globalData: {
     userInfo: null,
-    wxmap:{}
+    wxmap:{},
+    domain:'https://www.thairns.com/wechat/public/index.php'
   }
 });

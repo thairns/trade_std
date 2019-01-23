@@ -6,12 +6,7 @@
   align-items: left;
   justify-content: center;
 }
-.head input{
-  margin:auto 0;
-  padding:12rpx;
-  border-radius:10rpx;
-  background-color:#FFF;
-}
+
 .head .btn-search{
   margin-left: auto;
   margin-right: 0;

@@ -6,23 +6,6 @@
   </view>
   <view class="divide"></view>
 
-  <map
-      id="wxmap"
-      longitude="{{longi}}"
-      latitude="{{lati}}"
-      scale="16"
-      show-location
-      markers="{{markers}}"
-      bindmarkertap="markertap"
-      bindregionchange="regionchange"
-      style="width:100%;height:60%;"
-  >
-
-
-  <cover-view class="reset">
-    <cover-image class='reset_ico' bindtap="resetCen" src='{{coverImage}}'></cover-image>
-    </cover-view>
-  </map>
-
+  <include src="../../template/map.wxml"/>
 
 </view>
