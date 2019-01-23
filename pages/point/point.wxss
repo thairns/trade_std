@@ -1,0 +1,14 @@
+.point{
+  width:90%;
+}
+.point .item{
+  margin:8rpx auto;
+}
+.point .label{
+}
+.point button{
+  margin:24rpx auto;
+  width:100%;
+  background-color:#0073ff;
+  color:#FFF;
+}

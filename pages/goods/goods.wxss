@@ -1,0 +1,64 @@
+.goods-form{
+  width:90%;
+}
+.item{
+  margin:24rpx auto;
+}
+.item .label{
+  margin-bottom:24rpx;
+ }
+.submit button{
+  margin:24rpx auto;
+  width:100%;
+  background-color:#0073ff;
+  color:#FFF;
+}
+.goods-display{
+  margin:24rpx auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.goods-add{
+  width:168rpx;
+  height:168rpx;
+  text-align: center;
+  font-size:64rpx;
+  font-weight:500;
+  line-height:144rpx;
+  background-color:#FFF;
+  color:#777;
+  justify-content: left;
+}
+.goods-add:before{
+  content:"+";
+}
+.item-thumbnail{
+  position: relative;
+  padding:8rpx;
+}
+.item-close{
+  position: absolute;
+  width:32rpx;
+  height:32rpx;
+  border-radius: 50%;
+  background:#FF0000;
+  right:0;
+  top:0;
+  font-size:32rpx;
+  font-weight:500;
+  line-height:28rpx;
+  text-align: center;
+  color:#FFF;
+}
+.item-close:before{
+  content:"×";
+}
+.item-thumbnail image{
+  width:168rpx;
+  height:168rpx;
+}
+.goods-patch{
+  width:168rpx;
+}

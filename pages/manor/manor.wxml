@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="manor-handle">
+      <view class="add" bindtap="add"></view>
+    </view>
+    <view class="divide"></view>
+    <view wx:if="{{goods.length > 0}}" class="manor-context">
+      <view wx:for="{{goods}}" wx:key="{{item.id}}">
+        <view>{{item.title}}</view>
+        <view>{{item.price}}</view>
+      </view>
+    </view>
+    <view wx:else class="manor-context">
+      <view class="manor-tips">
+        还没添加任何物品
+      </view>
+    </view>
+    <view class="divide"></view>
+</view>

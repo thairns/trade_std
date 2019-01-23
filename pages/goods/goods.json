@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "suggestion":"../../component/suggestion/suggestion"
+  }
+}

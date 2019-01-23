@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="point">
+    <form name="manor" bindsubmit="submit">
+      <view class="item">
+        <view class="label">店名：</view>
+        <input type="text" name="name"/>
+      </view>
+      <view class="item">
+        <view>地址：</view>
+        <suggestion name="address" value=""></suggestion>
+      </view>
+      <view class="item">
+        <view>详细地址：</view>
+        <input type="text" name="detail" />
+      </view>
+      <view class="item">
+        <view>联系方式(如电话、邮箱等)：</view>
+        <input type="text" name="contact"/>
+      </view>
+      <view class="item">
+        <view>备注：</view>
+        <input type="text" name="remark"/>
+      </view>
+      <view class="item">
+        <button form-type="submit">登记</button>
+      </view>
+    </form>
+  </view>
+</view>

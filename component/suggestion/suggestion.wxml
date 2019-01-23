@@ -1,0 +1,15 @@
+<!--home.wxml-->
+<view class="container">
+  <view class="suggestion">
+    <view class="head">
+      <input name="{{address}}" value="{{value.title}}" bindinput="suggestion" />
+    </view>
+    <view class="suggestion-list" wx:if="{{display}}">
+      <view class="divide"></view>
+      <view wx:for="{{markers}}" class="candidate" wx:key="item.id" bindtap="touch" data-address="{{item}}">
+        <view class="title">{{item.title}}</view>
+        <view class="address">{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+</view>

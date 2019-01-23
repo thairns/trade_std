@@ -1,0 +1,28 @@
+
+.manor-context{
+  width:90%;
+}
+.manor-handle{
+  width:100%;
+}
+.manor-tips{
+  text-align: center;
+}
+.manor-handle .add{
+  position: absolute;
+  width:96rpx;
+  height:96rpx;
+  bottom:20rpx;
+  background-color:#a985e7;
+  opacity:0.5;
+  color:#FFF;
+  font-weight:500;
+  font-size:72rpx;
+  line-height:83rpx;
+  border-radius: 50%;
+  text-align:center;
+  z-index: 100;
+}
+.manor-handle .add:before{
+  content: "+";
+}

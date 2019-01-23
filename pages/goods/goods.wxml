@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+    <form name="manor" bindsubmit="submit" class="goods-form">
+      <view class="item">
+        <view class="label">名称：</view>
+        <input type="text" name="title"/>
+      </view>
+
+      <radio-group class="radio-group" bindchange="radioChange" name="trade_type">
+        <label><radio value="0" checked="true"/>价格</label>
+        <label><radio value="1"/>以物易物</label>
+      </radio-group>
+
+      <view class="item">
+        <view class="label">交易目标：</view>
+        <input type="text" name="trade"/>
+      </view>
+
+      <view class="item">
+        <view class="label">展示图：</view>
+        <view class="goods-display">
+          <view wx:for="{{thumbnail}}" wx:key="{{index}}" class="item-thumbnail">
+            <view data-index="{{index}}" class="item-close" bindtap="removeImage"></view>
+            <image src="{{item.path}}" bindtap="previewImage" data-index="{{index}}"></image>
+            <!--<image src="{{item}}" bindtap="previewImage" data-index="{{index}}"></image>-->
+          </view>
+          <view class="item-thumbnail" wx:if="{{thumbnail.length < 9}}">
+            <view class="goods-add" bindtap="addImg" ></view>
+          </view>
+          <view class="item-thumbnail"wx:if="{{thumbnail.length%3==1}}">
+            <view class="goods-patch"></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="submit">
+        <button form-type="submit">登记</button>
+      </view>
+    </form>
+</view>
