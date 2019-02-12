@@ -1,6 +1,13 @@
-
+view{
+  box-sizing: border-box;
+}
 .manor-context{
-  width:90%;
+  width: 700rpx;
+  margin: 0 auto;
+  padding:40rpx 0;
+}
+.items{
+  width:100%;
 }
 .manor-handle{
   width:100%;
@@ -9,10 +16,11 @@
   text-align: center;
 }
 .manor-handle .add{
-  position: absolute;
+  position: fixed;
   width:96rpx;
   height:96rpx;
-  bottom:20rpx;
+  bottom:120rpx;
+  right:60rpx;
   background-color:#a985e7;
   opacity:0.5;
   color:#FFF;
@@ -25,4 +33,38 @@
 }
 .manor-handle .add:before{
   content: "+";
+}
+.goods-item{
+  position:relative;
+  border-top:2rpx solid #FFF;
+  height:120rpx;
+  line-height:120rpx;
+  overflow:hidden;
+}
+.goods-item:last-child{
+  border-bottom:2rpx solid #FFF;
+}
+.inner{
+  position:absolute;
+  top:0;
+}
+.txt{
+  background-color:#FFF;
+  font-family: Monaco #fff;
+  width: 100%;
+  z-index: 5;
+  padding: 0 10rpx;
+  transition: left 0.2s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.del{
+  background-color:#dc3545;
+  font-family: Monaco ;
+  width: 180rpx;
+  text-align: center;
+  z-index: 4;
+  right: 0;
+  color: #FFF;
 }
