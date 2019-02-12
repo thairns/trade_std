@@ -1,0 +1,16 @@
+<!--home.wxml-->
+<view class="container">
+  <view class="head">
+    <input bindinput="suggestion" placeholder='搜索' />
+  </view>
+  <view class="divide"></view>
+
+  <include src="../../template/map.wxml"/>
+
+  <view class="">
+    <view wx:for="{{array}}">
+      {{item.address}}
+    </view>
+  </view>
+
+</view>
