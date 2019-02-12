@@ -1,0 +1,35 @@
+/**home.wxss**/
+.head{
+  width:80%;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+}
+.head input{
+  margin:auto 0;
+  padding:12rpx;
+  border-radius:10rpx;
+  background-color:#FFF;
+}
+.head .btn-search{
+  margin-left: auto;
+  margin-right: 0;
+}
+.reset{
+  padding:10rpx;
+  border-radius: 50%;
+  background: #FFF;
+  width:38rpx;
+  height:38rpx;
+
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+  z-index: 10;
+}
+.reset_ico{
+  width: 38rpx;
+  height:38rpx;
+  z-index: 12;
+}
