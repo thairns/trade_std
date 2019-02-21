@@ -1,0 +1,34 @@
+<!--home.wxml-->
+<view class="container">
+    <view class="">
+        <view class="swiper">
+            <view class="swiper-body">
+                <swiper
+                        autoplay="true"
+                        circular="true"
+                >
+                    <block wx:for="{{goods.thumbnail}}" wx:key="{{index}}">
+                        <swiper-item>
+                            <image src="{{item}}" mode="aspectFill" bindtap="preview" data-index="{{index}}"></image>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+        <view class="detail-message">
+            <view class="detail-title">
+                {{goods.title}}
+            </view>
+            <view class="detail-trade-type ">
+                {{goods.trade_type==0?"直接出售":"以物易物"}}
+            </view>
+            <view class="detail-trade">
+                {{goods.trade}}
+            </view>
+            <view class="detail-remark"></view>
+        </view>
+    </view>
+    <view class="btn-trade">
+        <view class="trade">请求交易</view>
+    </view>
+</view>

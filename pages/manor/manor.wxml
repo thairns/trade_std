@@ -6,8 +6,8 @@
     <view class="divide"></view>
     <view wx:if="{{goods.length > 0}}" class="manor-context">
         <view class="items">
-            <view wx:for="{{goods}}" wx:key="{{item.id}}" class="goods-item" bindtap="detail" id="{{item.id}}">
-                <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}"
+            <view wx:for="{{goods}}" wx:key="{{item.id}}" class="goods-item" >
+                <view id="{{item.id}}" bindtap="detail" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}"
                       style="{{slide[index]}}" class="inner txt">{{item.title}}</view>
                 <view data-index="{{index}}" bindtap="del" class="inner del">删除</view>
             </view>

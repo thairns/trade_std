@@ -1,12 +1,19 @@
 //home.js
+/**
+ * home
+ * 首页
+ * 主体为一个地图组件
+ * 打开时显示用户所处位置
+ * 可通过搜索查找对应的物品位置信息
+ */
 //获取应用实例
 const app = getApp();
 let amap = require("../../lib/amap");
 
 Page({
     data: {
-        longi:'113.324520',
-        lati:'23.099994',
+        longi:'113',
+        lati:'23',
         coverImage:'/resources/aim2.png',
         markers: [{
           id: 1,

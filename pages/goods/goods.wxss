@@ -62,3 +62,9 @@
 .goods-patch{
   width:168rpx;
 }
+.item textarea{
+  padding:18rpx;
+  border-radius:10rpx;
+  background-color:#FFF;
+  width:638rpx;
+}

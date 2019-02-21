@@ -3,11 +3,11 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="91135141-4a82-4ddc-bd86-15897fe0b270" name="thain" url="http://47.106.91.118">
-        <fileTransfer host="47.106.91.118" port="21" rootFolder="/home/thain/file/trade_std">
+        <fileTransfer host="47.106.91.118" port="22" rootFolder="/home/thain/file/trade_std" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

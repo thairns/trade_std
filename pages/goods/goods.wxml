@@ -17,6 +17,11 @@
       </view>
 
       <view class="item">
+        <view class="label">备注：</view>
+        <textarea auto-height="true"></textarea>
+      </view>
+
+      <view class="item">
         <view class="label">展示图：</view>
         <view class="goods-display">
           <view wx:for="{{thumbnail}}" wx:key="{{index}}" class="item-thumbnail">

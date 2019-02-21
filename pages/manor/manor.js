@@ -94,16 +94,17 @@ Page({
     detail:function(e){
       let id = e.currentTarget.id;
       let index = e.target.dataset.index;
+      wx.navigateTo({
+          url:"/pages/detail/detail?id="+id
+      });
     },
 
     //拖拽开始时初始化slide为默认值（将所有滑块归位）
     touchS:function(e){
-      let slide = this.data.slide;
-      slide.fill("left:0rpx;");
+      this.reset();
       if(e.touches.length == 1){
         this.setData({
             startX:e.touches[0].clientX,
-            slide
         });
       }
     },
@@ -159,13 +160,18 @@ Page({
     getEleWidth:function(width){
       return Math.floor(wx.getSystemInfoSync().windowWidth/(750/width));
     },
-
     initEleWidth:function(){
       let delBtnWidth = this.getEleWidth(this.data.delBtnWidth);
-      console.log(delBtnWidth);
       this.setData({
           delBtnWidth
       });
+    },
+    reset:function(){
+        let slide = this.data.slide;
+        slide.fill("left:0rpx;");
+        this.setData({
+            slide
+        });
     },
 
     /**
@@ -175,30 +181,41 @@ Page({
       let _this = this;
       let index = e.target.dataset['index'];
       let id = _this.data.goods[index].id;
+      wx.showModal({
+        title: '提示',
+        content: '确认删除' + _this.data.goods[index].title + "?",
+        success: res=>{
+            if (res.confirm) {           //跳转创建
+                wx.request({
+                    method:"get",
+                    url:_this.data.domain+ "/index/goods/del?id="+id,
+                    success:res=>{
+                        if(res.data.status == 1){
+                            //成功则删除当前列
+                            let goods = this.data.goods;
+                            let slide = this.data.slide;
 
-        wx.showModal({
-            title: '提示',
-            content: '确认删除' + _this.data.goods[index].title + "?",
-            success: res=>{
-                if (res.confirm) {           //跳转创建
-                    wx.navigateTo({
-                        // url:"/pages/point/point?uid=" +_this.data.uid+"&type=del&id="+id
-                        url:_this.data.domain+ "/index/goods/del?id="+id
-                    });
-                }else if(res.cancel){        //返回上一页
-                    wx.navigateBack();
-                }
+                            goods.splice(index,1);
+                            slide.splice(index,1);
+                            this.setData({
+                                slide,
+                                goods
+                            })
+                        }else{
+
+                        }
+                        wx.showToast({
+                            title:res.data.message,
+                            icon:res.data.status == 1? "success":"none"
+                        })
+
+                        console.log(res);
+                    }
+                });
+
+            }else if(res.cancel){        //返回上一页
             }
-        });
-
-      let goods = this.data.goods;
-      let slide = this.data.slide;
-
-      goods.splice(index,1);
-      slide.splice(index,1);
-      this.setData({
-          slide,
-          goods
-      })
+        }
+    });
     }
 })

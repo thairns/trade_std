@@ -1,19 +1,22 @@
 //index.js
-//获取应用实例
+/**
+ * 用户个人中心界面
+ * 打开时根据是否登录显示对应画面
+ */
 const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    pic:'/resources/aim.svg',
-    domain:'',
-    uid:"",
-    cur_cursor:0
+    userInfo: {},                                               //用户授权信息    加载时赋值
+    hasUserInfo: false,                                        //授权赋值标记    默认false，加载过程中进行判断重赋值
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),   //调用接口判断是否拥有授权
+    domain:'',                                                 //域名            加载时赋值
+    uid:"",                                                    //使用者UID        授权时赋值
+    // cur_cursor:0
   },
   onLoad: function () {
-      let _this = this;
+    let _this = this;
+    //加载时判断小程序授权情况
     if (app.globalData.userInfo) {
         _this.setData({
         userInfo: app.globalData.userInfo,
@@ -40,10 +43,11 @@ Page({
         }
       })
     }
+    //将全局变量复制到该页面
     if(app.globalData.domain){
         _this.data.domain = app.globalData.domain;
     }
-
+    //判断是否拥有uid
     if(_this.data.userInfo.uid){
         console.log("uid:",_this.data.userInfo.uid);
     }else{
@@ -58,8 +62,11 @@ Page({
         });
     }
   },
+    /**
+     * 获取用户授权情况
+     * @param e
+     */
   getUserInfo: function(e) {
-    console.log(e);
     app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
@@ -67,6 +74,10 @@ Page({
     });
     this.getUID();
   },
+    /**
+     * 获取用户UID
+     * 当用户授权时，也需要调用该接口将用户注册到数据库
+     */
     getUID:function(){
       let _this = this;
         wx.login({
@@ -99,8 +110,13 @@ Page({
             }
         });
     },
+    /**
+     * 个人据点
+     * 点击时跳转到自己的物品管理页面
+     */
   myShop: function(){
       let _this = this;
+      //如果本页面不存在uid则去缓存取，如果缓存没有则不跳转
       if(!_this.data.uid){
           wx.getStorage({
               key:'uid',

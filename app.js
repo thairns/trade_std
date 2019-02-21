@@ -76,6 +76,7 @@ App({
   globalData: {
     userInfo: null,
     wxmap:{},
-    domain:'https://www.thairns.com/wechat/public/index.php'
+    domain:'https://www.thairns.com/wechat/public/index.php',
+    domain_static:'https://www.thairns.com/wechat/public'
   }
 });

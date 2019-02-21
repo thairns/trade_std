@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/home/home",
     "pages/goods/goods",
     "pages/manor/manor",
-    "pages/home/home",
-    "pages/index/index",
     "pages/point/point"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
